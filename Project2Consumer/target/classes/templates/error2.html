@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}"/>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:insert="fragments :: heading"></header>
+	<main>
+	<h1 th:text="#{error}">OOPS</h1>
+	</main>
+	<footer th:insert="fragments :: footer"></footer>
+</body>
+</html>

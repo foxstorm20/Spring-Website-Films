@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/styles.css}"/>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+</head>
+<body>
+	<header th:insert="fragments :: heading"></header>
+	<main>
+		<div class="centre-screen">
+		<table class="push">
+			<tr>
+				<th>ID</th>
+				<th th:text="#{film.films}">Films</th>
+				<th th:text="#{film.releaseDate}">Release Date</th>
+				<th th:text="#{film.directedby}">Directed by</th>
+			</tr>
+			<tr th:each = "film,iterationCount : ${films}" th:class="${iterationCount.odd}? 'odd'" th:object="${film}">
+				<td th:text="*{filmId}">ID</td>
+				<td th:text="*{filmName}">FILM</td>
+				<td><a th:text="*{releaseDate}" th:href="'/showfilms/' + *{releaseDate}">RELEASE DATE</a></td>
+				<td th:text="*{filmDirected.firstName} +' '+ *{filmDirected.lastName}">DIRECTOR_NAME</td>
+			</tr>
+		</table>
+	</div>
+	</main>
+	<footer th:insert="fragments :: footer"></footer>
+</body>
+</html>

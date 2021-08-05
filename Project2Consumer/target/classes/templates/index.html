@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" th:href="@{/styles.css}" type="text/css"/>
+	<title>Welcome</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<header th:insert="fragments :: heading"></header>
+	<main>	
+	<h1>
+		<span th:text="#{index.welcome}"></span><span th:text="${name}">DEFAULT TEXT</span>
+	</h1>
+
+	</main>
+	<footer th:insert="fragments :: languages"></footer>
+</body>
+</html>
